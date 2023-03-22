@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <!--<setting name="cacheEnabled" value="true"/>-->
+    </settings>
+    <!--
+1. 如果一个包下有很多的类，我们可以直接引入包
+2. 这样该包下面的所有类名，可以直接使用
+-->
+    <typeAliases>
+        <package name="com.edu.furn.bean"/>
+    </typeAliases>
+<!--    引入MyBatis Generator 包, 在pom.xml 配置-->
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+</configuration>
